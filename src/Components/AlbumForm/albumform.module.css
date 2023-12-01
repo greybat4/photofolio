@@ -1,0 +1,36 @@
+/* formContainer */
+.formContainer{
+    width: 150%;
+    height: 60%;
+    display: block;
+    background-color: rgb(162, 226, 226);
+
+}
+
+/* form input css */
+.forminput{
+    width: 55%;
+    margin: 0 2%;
+}
+
+/* buttons inside the form */
+.formBtn{
+    width: 100px;
+    height: 35px;
+    /* margin: 0 1%; */
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-family: Arial;
+}
+
+/* clear button */
+.clearBtn{
+    background-color: #FF1300;
+}
+/* create button */
+.addBtn{
+    background-color: #0077FF;
+}
