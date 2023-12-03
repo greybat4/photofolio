@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+// importing styles 
 import styles from "./albumlist.module.css";
+
+
 import AlbumForm from "../AlbumForm/AlbumForm";
 import Album from "../Album/Album";
+import ImageList from "../ImageList/ImageList";
+
+// importing firebase database
+import { db } from "../../firebaseInit"
+import { collection, onSnapshot } from "firebase/firestore";
 
 function AlbumList() {
   // variables to store data
@@ -13,6 +21,24 @@ function AlbumList() {
 
   // to open any album with some AlbumID (default - false)
   const [openAlbum, setOpenAlbum] = useState({ albumId: "", open: false });
+
+ // get data from database when the app gets render
+ useEffect(()=>{
+
+    // getting realtime updates from database
+    const unsub = onSnapshot(collection(db, "album"), (snapShot) => {
+        const card = snapShot.docs.map((doc) => {
+            return{
+                id:doc.id,
+                ...doc.data()
+            }
+        });
+        console.log(card);
+        // storing all the albums within local state variable
+        setAlbumList(card);
+    });
+},[]);
+
 
   return (
     <>

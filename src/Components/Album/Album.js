@@ -1,7 +1,7 @@
 // importing css module styles
 import styles from "./album.module.css";
 
-function Album() {
+function Album(props) {
   // info about album and to open an album
   var { info, setOpenAlbum } = props;
 
