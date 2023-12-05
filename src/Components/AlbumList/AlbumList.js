@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// importing styles 
+// importing styles
 import styles from "./albumlist.module.css";
 
 import AlbumForm from "../AlbumForm/AlbumForm";
@@ -7,7 +7,7 @@ import Album from "../Album/Album";
 import ImageList from "../ImageList/ImageList";
 
 // importing firebase database
-import { db } from "../../firebaseInit"
+import { db } from "../../firebaseInit";
 import { collection, onSnapshot } from "firebase/firestore";
 
 function AlbumList() {
@@ -21,23 +21,21 @@ function AlbumList() {
   // to open any album with some AlbumID (default - false)
   const [openAlbum, setOpenAlbum] = useState({ albumId: "", open: false });
 
- // get data from database when the app gets render
- useEffect(()=>{
-
+  // get data from database when the app gets render
+  useEffect(() => {
     // getting realtime updates from database
-    const unsub = onSnapshot(collection(db, "album"), (snapShot) => {
-        const card = snapShot.docs.map((doc) => {
-            return{
-                id:doc.id,
-                ...doc.data()
-            }
-        });
-        console.log(card);
-        // storing all the albums within local state variable
-        setAlbumList(card);
+    onSnapshot(collection(db, "album"), (snapShot) => {
+      const card = snapShot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+      console.log(card);
+      // storing all the albums within local state variable
+      setAlbumList(card);
     });
-},[]);
-
+  }, []);
 
   return (
     <>
@@ -57,24 +55,23 @@ function AlbumList() {
               {/* button to show and hide album form */}
               <button
                 className={styles.btn}
-                onClick={() => setShowAlbumForm(!showAlbumForm)}>
+                onClick={() => setShowAlbumForm(!showAlbumForm)}
+              >
                 {!showAlbumForm ? "Add album" : "cancel"}
               </button>
             </div>
 
             <div className={styles.albumContainer}>
               {/* looping over all the albums in the array and showing them one by one */}
-              {albumList.map((card, i) => 
-                <Album key={i}
-                       info={card} 
-                       setOpenAlbum={setOpenAlbum} />
-              )}
+              {albumList.map((card, i) => (
+                <Album key={i} info={card} setOpenAlbum={setOpenAlbum} />
+              ))}
             </div>
           </>
-        )  
+        ) : (
           // if open album is true then render all the content within the album
-          : <ImageList openAlbum={openAlbum} setOpenAlbum={setOpenAlbum} />
-              }
+          <ImageList openAlbum={openAlbum} setOpenAlbum={setOpenAlbum} />
+        )}
       </div>
     </>
   );
