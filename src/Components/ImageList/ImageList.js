@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { ToastContainer, toast } from 'react-toastify';
 
 import ImageForm from "../ImaageForm/ImageForm";
 import Image from "../Image/Image";
@@ -87,6 +86,7 @@ function ImageList(props) {
         </button>
         {/* input box to search image in that perticualr album */}
         <input
+          className={styles.searchbtn}
           type="text"
           placeholder="Search Image.."
           onChange={(e) => setSearch(e.target.value)}
@@ -136,6 +136,7 @@ function ImageList(props) {
             <Image
               image={image}
               key={i}
+              index={i}
               handleImageEdit={handleImageEdit}
               handleImageDelete={handleImageDelete}
               openLightbox={openLightbox}

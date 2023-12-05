@@ -10,12 +10,13 @@ function Image(props) {
             {/* showing image */}
             <div className={styles.imageBox}>
                 <img src={image.link}
-                     alt="image"
+                     alt={image.name}
                      onClick={() => openLightbox(index)}/>
             </div>
+          
 
 {/* image name with button to delete or edit image */}
-<div className={styles.iamgeInfo}>
+<div className={styles.imageInfo}>
     {image.name}
     {/* for edit */}
     <button className={`${styles.imageBtn} ${styles.editBtn}`}

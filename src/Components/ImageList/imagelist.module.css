@@ -8,26 +8,36 @@
 
 /* serach bar withing button container */
 .btnContainer input{
-    width: 50%;
+    width: 40%;
 }
 
 /* buttons */
 .btn{
     width: 90px;
     height: 31px;
-    color: white;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-weight: 700;
 }
 
 /* back button */
 .backBtn{
     float: left;
     background-color: #51d0de;
+    border: none;
+}
+.backBtn:hover{
+    background-color: #ff8077;
 }
 
 /* add image button */
 .addBtn{
     float: right;
-    background-color: #f44336;
+    background-color: #ff8077;
+    border: none;
+}
+.addBtn:hover{
+    background-color: rgb(109, 186, 253);
 }
 
 
@@ -36,6 +46,12 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+.searchbtn{
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 
