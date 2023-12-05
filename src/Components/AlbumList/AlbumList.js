@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 // importing styles 
 import styles from "./albumlist.module.css";
 
-
 import AlbumForm from "../AlbumForm/AlbumForm";
 import Album from "../Album/Album";
 import ImageList from "../ImageList/ImageList";
@@ -58,23 +57,22 @@ function AlbumList() {
               {/* button to show and hide album form */}
               <button
                 className={styles.btn}
-                onClick={() => setShowAlbumForm(!showAlbumForm)}
-              >
+                onClick={() => setShowAlbumForm(!showAlbumForm)}>
                 {!showAlbumForm ? "Add album" : "cancel"}
               </button>
             </div>
 
             <div className={styles.albumContainer}>
               {/* looping over all the albums in the array and showing them one by one */}
-              {albumList.map((card, i) => (
+              {albumList.map((card, i) => 
                 <Album key={i} info={card} setOpenAlbum={setOpenAlbum} />
-              ))}
+              )}
             </div>
           </>
-        ) : (
+        )  
           // if open album is true then render all the content within the album
-          <ImageList openAlbum={openAlbum} setOpenAlbum={setAlbumList} />
-        )}
+          :<ImageList openAlbum={openAlbum} setOpenAlbum={setAlbumList} />
+              }
       </div>
     </>
   );

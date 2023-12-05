@@ -23,7 +23,7 @@ function Image(props) {
 
     {/* to delete */}
 <button className={`${styles.imageBtn} ${styles.deleteBtn}`}
-onClick={()=> handleImageDelete}>X</button>
+onClick={()=> handleImageDelete(image)}>X</button>
 
 </div>
         </div>
