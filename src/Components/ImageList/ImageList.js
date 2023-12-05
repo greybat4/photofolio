@@ -34,17 +34,17 @@ function ImageList(props) {
   // function to back to the album list page
   function handleBackClick(e) {
     e.preventDefault();
-    setOpenAlbum({ albumId: "", show: false });
+    setOpenAlbum({ albumId: "", open: false });
     console.log("handleBack is Clicked");
   }
 
   // get the images from the DB
   useEffect(() => {
-    const unsub = onSnapshot(doc(db, "album", openAlbum.albumId), (doc) => {
+    onSnapshot(doc(db, "album", openAlbum.albumId), (doc) => {
       const data = doc.data().imageList;
       setImageList(data);
     });
-  }, []);
+  }, [openAlbum.albumId]);
 
   // deleting an image from list
   async function handleImageDelete(image) {
@@ -156,7 +156,7 @@ function ImageList(props) {
             <img
               className="lightbox-image"
               src={imageList[currentImageIndex].link}
-              alt={`Image ${currentImageIndex}`}
+              alt={`${currentImageIndex}`}
             />
           </div>
         </div>

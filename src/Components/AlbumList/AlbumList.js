@@ -73,7 +73,7 @@ function AlbumList() {
           </>
         )  
           // if open album is true then render all the content within the album
-          :<ImageList openAlbum={openAlbum} setOpenAlbum={setAlbumList} />
+          : <ImageList openAlbum={openAlbum} setOpenAlbum={setOpenAlbum} />
               }
       </div>
     </>
