@@ -24,7 +24,7 @@
 }
 
 
-/* button inside image card */
+/* button inside image card  */
 .imageBtn{
     display: none;
     float: right;
@@ -36,12 +36,20 @@
 
 /* delete button */
 .deleteBtn{
-    background-color: crimson;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: url("../../assets/images/trash-bin.png");
+    background-size: cover;
 }
 
 /* update button  */
 .editBtn{
-    background-color: #c277e0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: url("../../assets/images/edit.png");
+    background-size: cover;
 }
 
 /* showing buttons on hovering */

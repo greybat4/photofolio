@@ -48,7 +48,7 @@ function ImageList(props) {
   }, []);
 
   // deleting an image from list
-  async function handleDeleteImage(image) {
+  async function handleImageDelete(image) {
     const albumRef = doc(db, "album", openAlbum.albumId);
     await updateDoc(albumRef, {
       imageList: arrayRemove(image),
@@ -77,7 +77,7 @@ function ImageList(props) {
     <>
       <ToastContainer />
       {/* button container */}
-      <div className={StyleSheet.btnContainer}>
+      <div className={styles.btnContainer}>
         {/* back button */}
         <button
           className={`${styles.btn} ${styles.backBtn}`}
@@ -117,7 +117,7 @@ function ImageList(props) {
         {/* if album is empty it will show diffrent heading */}
         <h1>
           {imageList.length !== 0
-            ? "Images in ${albumId}"
+            ? "Images in Album"
             : "No images found in the album."}
         </h1>
       </div>
@@ -137,7 +137,7 @@ function ImageList(props) {
               image={image}
               key={i}
               handleImageEdit={handleImageEdit}
-              handleDeleteImage={handleDeleteImage}
+              handleImageDelete={handleImageDelete}
               openLightbox={openLightbox}
             />
           ))}

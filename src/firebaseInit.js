@@ -3,12 +3,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyClln7DQvTnZshIjy6cFPdh5rIo4VMxzbw",
+  authDomain: "photofolio-1011c.firebaseapp.com",
+  projectId: "photofolio-1011c",
+  storageBucket: "photofolio-1011c.appspot.com",
+  messagingSenderId: "602525153155",
+  appId: "1:602525153155:web:39754ddc53daf1fbf7a8b6"
 };
 
 const app = initializeApp(firebaseConfig);

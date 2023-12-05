@@ -65,7 +65,9 @@ function AlbumList() {
             <div className={styles.albumContainer}>
               {/* looping over all the albums in the array and showing them one by one */}
               {albumList.map((card, i) => 
-                <Album key={i} info={card} setOpenAlbum={setOpenAlbum} />
+                <Album key={i}
+                       info={card} 
+                       setOpenAlbum={setOpenAlbum} />
               )}
             </div>
           </>

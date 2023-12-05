@@ -19,11 +19,11 @@ function Image(props) {
     {image.name}
     {/* for edit */}
     <button className={`${styles.imageBtn} ${styles.editBtn}`}
-    onClick={()=> handleImageEdit(image)}>Edit</button>
+    onClick={()=> handleImageEdit(image)}></button>
 
     {/* to delete */}
 <button className={`${styles.imageBtn} ${styles.deleteBtn}`}
-onClick={()=> handleImageDelete(image)}>X</button>
+onClick={()=> handleImageDelete(image)}></button>
 
 </div>
         </div>

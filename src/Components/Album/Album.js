@@ -3,10 +3,10 @@ import styles from "./album.module.css";
 
 function Album(props) {
   // info about album and to open an album
-  var { info, setOpenAlbum } = props;
+  var {info, setOpenAlbum} = props;
 
   // onClick on album to see the content
-  function handleAlbumClick() {
+  function handleClick() {
     setOpenAlbum({ albumId: info.id, open: true });
   }
 
@@ -16,7 +16,7 @@ function Album(props) {
       <div className={styles.albumContainer}>
 
         {/* logo */}
-        <div className={styles.albumLogo} onClick={handleAlbumClick}>
+        <div className={styles.albumLogo} onClick={handleClick}>
         </div>
 
         {/* album name */}
